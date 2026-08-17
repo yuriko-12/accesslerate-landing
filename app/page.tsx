@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav shell" aria-label="Navegación principal">
-        <a className="brand brand-logo" href="#top" aria-label="Accesslerate, inicio"><img src="/accesslerate-logo.png" width="800" height="420" alt="Accesslerate" /></a>
+        <a className="brand brand-logo" href="#top" aria-label="Accesslerate, inicio"><img src="/accesslerate-logo-transparent.png" width="792" height="361" alt="Accesslerate" /></a>
         <div className="nav-links"><a href="#servicios">Expertise</a><a href="#enfoque">Approach</a><a href="#contacto">Contact</a></div>
         <a className="nav-cta" href="#agenda">Schedule a conversation <span aria-hidden="true">↗</span></a>
       </nav>
@@ -40,7 +40,7 @@ export default function Home() {
 
       <section className="contact dark-section" id="contacto"><div className="shell contact-grid"><div><p className="section-index">07 / STAY CONNECTED</p><h2>Useful perspective.<br /><em>Without the noise.</em></h2><p>Occasional notes on healthcare strategy, access and growth—written for people making consequential decisions.</p><form className="newsletter" action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST"><label htmlFor="email">Email address</label><div><input id="email" name="email" type="email" placeholder="name@company.com" required /><button type="submit" aria-label="Subscribe to newsletter">→</button></div></form></div><div className="direct-contact"><p>Prefer to connect directly?</p><a href="mailto:yuriko@accesslerate.com">yuriko@accesslerate.com <span>↗</span></a><a href="https://www.linkedin.com/in/yurikotovar" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a></div></div></section>
 
-      <footer><div className="shell footer-grid"><div><a className="brand brand-logo footer-brand" href="#top" aria-label="Accesslerate, inicio"><img src="/accesslerate-logo.png" width="800" height="420" alt="Accesslerate" /></a><p>Complexity Shapes Advantage.</p></div><div><p>Strategic advisory for organizations competing<br />where complexity defines outcomes.</p></div><div><a href="#servicios">Expertise</a><a href="#enfoque">Approach</a><a href="#agenda">Schedule</a></div></div><div className="shell legal"><span>© {new Date().getFullYear()} Accesslerate. All rights reserved.</span><a href="#top">Back to top ↑</a></div></footer>
+      <footer><div className="shell footer-grid"><div><a className="brand brand-logo footer-brand" href="#top" aria-label="Accesslerate, inicio"><img src="/accesslerate-logo-transparent.png" width="792" height="361" alt="Accesslerate" /></a><p>Complexity Shapes Advantage.</p></div><div><p>Strategic advisory for organizations competing<br />where complexity defines outcomes.</p></div><div><a href="#servicios">Expertise</a><a href="#enfoque">Approach</a><a href="#agenda">Schedule</a></div></div><div className="shell legal"><span>© {new Date().getFullYear()} Accesslerate. All rights reserved.</span><a href="#top">Back to top ↑</a></div></footer>
     </main>
   );
 }
