@@ -11,9 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = "Strategic advisory for organizations competing where complexity defines outcomes.";
   return {
     metadataBase: new URL(origin), title, description,
-    alternates: { canonical: "https://accesslerate.com" },
+    alternates: { canonical: "https://www.accesslerate.com/" },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { title, description, type: "website", url: "https://accesslerate.com", images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Accesslerate — Complexity Shapes Advantage." }] },
+    openGraph: { title, description, type: "website", url: "https://www.accesslerate.com/", images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Accesslerate — Complexity Shapes Advantage." }] },
     twitter: { card: "summary_large_image", title, description, images: [`${origin}/og.png`] },
   };
 }
