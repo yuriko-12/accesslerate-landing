@@ -111,6 +111,19 @@ function Title({ lines }: { lines: SectionTitle }) {
 export default function MarketingHome({ locale }: { locale: Locale }) {
   const c = copy[locale];
   const switchHref = locale === "en" ? "/es" : "/";
+  const serviceHrefs = locale === "en" ? [
+    "/services/business-growth-strategy",
+    "/services/market-access",
+    "/services/new-business-partnerships",
+    "/services/commercial-transformation",
+    "/services/change-management",
+  ] : [
+    "/es/servicios/estrategia-negocio-crecimiento",
+    "/es/servicios/market-access",
+    "/es/servicios/nuevos-negocios-alianzas",
+    "/es/servicios/transformacion-comercial",
+    "/es/servicios/gestion-del-cambio",
+  ];
   const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "Accesslerate", url: locale === "en" ? "https://www.accesslerate.com/" : "https://www.accesslerate.com/es", description: c.hero.lead, email: "yuriko@accesslerate.com", areaServed: ["Mexico", "Latin America"], founder: { "@type": "Person", name: "Yuriko Tovar Santos", jobTitle: "Founder & Managing Director", sameAs: "https://www.linkedin.com/in/yurikotovar" }, sameAs: ["https://www.linkedin.com/in/yurikotovar"], knowsAbout: ["Healthcare Strategy", "Market Access", "Business Development", "Commercial Transformation", "Change Management"] };
 
   return <main lang={c.lang}>
@@ -128,8 +141,8 @@ export default function MarketingHome({ locale }: { locale: Locale }) {
 
     <section className="services shell section-pad" id="servicios"><header className="section-head"><p className="section-index">{c.expertise.index}</p><p className="kicker">{c.expertise.kicker}</p></header><div className="service-list">{c.expertise.services.map((service, index) => {
       const content = <><span className="number">{String(index + 1).padStart(2, "0")}</span><div><h3>{service.title[0]}<br />{service.title[1]}</h3><p>{service.body}</p><ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul></div><span className="card-arrow icon-arrow icon-ne" aria-hidden="true" /></>;
-      const href = index === 1 ? (locale === "en" ? "/services/market-access" : "/es/servicios/market-access") : null;
-      return href ? <a className="service-card service-card-link" href={href} key={service.title[0]} aria-label={`${service.title[0]} ${service.title[1]}`}>{content}</a> : <article className="service-card" key={service.title[0]}>{content}</article>;
+      const href = serviceHrefs[index];
+      return <a className="service-card service-card-link" href={href} key={service.title[0]} aria-label={`${service.title[0]} ${service.title[1]}`}>{content}</a>;
     })}</div></section>
 
     <section className="experience paper-section" id="experiencia"><div className="shell experience-grid"><div><p className="section-index">{c.experience.index}</p><h2><Title lines={c.experience.title} /></h2></div><div className="experience-copy"><p className="large-copy">{c.experience.lead}</p><p>{c.experience.body}</p></div></div><div className="shell proof-wrap"><p className="proof-note">{c.experience.note}</p><div className="proof-grid">{c.experience.outcomes.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div></section>
