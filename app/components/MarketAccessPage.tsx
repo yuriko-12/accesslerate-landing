@@ -80,6 +80,12 @@ const copy = {
 export default function MarketAccessPage({ locale }: { locale: Locale }) {
   const c = copy[locale];
   const pageUrl = locale === "en" ? "https://www.accesslerate.com/services/market-access" : "https://www.accesslerate.com/es/servicios/market-access";
+  const pagePath = locale === "en" ? "/services/market-access" : "/es/servicios/market-access";
+  const related = locale === "en" ? [
+    ["Business & Growth Strategy", "/services/business-growth-strategy"], ["Market Access", "/services/market-access"], ["New Business & Partnerships", "/services/new-business-partnerships"], ["Commercial Transformation", "/services/commercial-transformation"], ["Change Management", "/services/change-management"],
+  ] : [
+    ["Estrategia de Negocio y Crecimiento", "/es/servicios/estrategia-negocio-crecimiento"], ["Market Access", "/es/servicios/market-access"], ["Nuevos Negocios y Alianzas", "/es/servicios/nuevos-negocios-alianzas"], ["Transformación Comercial", "/es/servicios/transformacion-comercial"], ["Gestión del Cambio", "/es/servicios/gestion-del-cambio"],
+  ];
   const serviceSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -125,6 +131,8 @@ export default function MarketAccessPage({ locale }: { locale: Locale }) {
     <section className="service-difference paper-section"><div className="shell section-pad"><div className="service-difference-grid"><div><p className="section-index">{c.difference.index}</p><h2>{c.difference.title}</h2></div><p className="service-large-copy">{c.difference.body}</p></div><p className="proof-note">{c.difference.proofLabel}</p><div className="service-proof">{c.difference.proof.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div><p className="service-proof-note">{c.difference.note}</p></div></section>
 
     <section className="shell service-faq section-pad" id="faq"><header className="service-section-head"><div><p className="section-index">{c.faq.index}</p><h2>{c.faq.title}</h2></div></header><div className="faq-list">{c.faq.items.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i aria-hidden="true">+</i></summary><p>{answer}</p></details>)}</div></section>
+
+    <section className="service-related dark-section"><div className="shell section-pad"><p className="section-index">{locale === "en" ? "EXPLORE OUR EXPERTISE" : "CONOCE NUESTROS SERVICIOS"}</p><div className="service-related-list">{related.map(([label, href], index) => <a href={href} key={href} aria-current={href === pagePath ? "page" : undefined}><span>{String(index + 1).padStart(2, "0")}</span>{label}<i className="icon-arrow icon-ne" aria-hidden="true" /></a>)}</div></div></section>
 
     <section className="schedule service-conversation" id="conversation"><div className="shell service-conversation-grid"><div><p className="section-index">{c.conversation.index}</p><h2>{c.conversation.title}</h2><p>{c.conversation.body}</p></div><div className="service-contact-card"><a className="button primary wide" href="https://calendly.com/yuriko-accesslerate/30min" target="_blank" rel="noreferrer">{c.conversation.action} <span className="icon-arrow icon-ne" aria-hidden="true" /></a><p>{c.conversation.email}</p><a href="mailto:yuriko@accesslerate.com">yuriko@accesslerate.com <span className="icon-arrow icon-ne" aria-hidden="true" /></a><a href={`https://wa.me/525549679335?text=${encodeURIComponent(c.conversation.whatsapp)}`} target="_blank" rel="noreferrer">WhatsApp <span className="icon-arrow icon-ne" aria-hidden="true" /></a></div></div></section>
 
