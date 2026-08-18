@@ -14,5 +14,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: "https://www.accesslerate.com/services/market-access",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: { "en-US": "https://www.accesslerate.com/services/market-access", "es-MX": "https://www.accesslerate.com/es/servicios/market-access" } },
+    },
+    {
+      url: "https://www.accesslerate.com/es/servicios/market-access",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: { "en-US": "https://www.accesslerate.com/services/market-access", "es-MX": "https://www.accesslerate.com/es/servicios/market-access" } },
+    },
   ];
 }
