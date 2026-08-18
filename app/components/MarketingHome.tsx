@@ -26,6 +26,7 @@ const copy = {
         { title: ["Strategy Activation &", "Change Management"], body: "Convert direction into adoption through leadership alignment, stakeholder mobilization and measurable behavior change.", items: ["Change strategy", "Leadership & stakeholder alignment", "Adoption roadmap"] },
       ],
     },
+    featured: { label: "FEATURED SOLUTION · MEXICO MARKET ENTRY", title: ["Entering Mexico?", "Build the thesis before the footprint."], body: "An integrated market-entry agenda connecting opportunity, Market Access, partners, go-to-market and organizational activation.", action: "Explore Mexico market entry", href: "/solutions/healthcare-market-entry-mexico" },
     experience: {
       index: "03 / OPERATOR EXPERIENCE", title: ["Executive judgment.", "Earned in the market."],
       lead: "Accesslerate combines the objectivity of an external advisor with the practical judgment of a healthcare operator.",
@@ -75,6 +76,7 @@ const copy = {
         { title: ["Activación Estratégica", "y Gestión del Cambio"], body: "Convertimos la dirección en adopción mediante alineación de líderes, movilización de stakeholders y cambios de comportamiento medibles.", items: ["Estrategia de cambio", "Alineación de líderes y stakeholders", "Roadmap de adopción"] },
       ],
     },
+    featured: { label: "SOLUCIÓN DESTACADA · ENTRADA AL MERCADO MEXICANO", title: ["¿Entrando a México?", "Construye la tesis antes que la huella."], body: "Una agenda integrada de entrada que conecta oportunidad, Market Access, socios, go-to-market y activación organizacional.", action: "Conoce la solución para México", href: "/es/soluciones/entrada-mercado-healthcare-mexico" },
     experience: {
       index: "03 / EXPERIENCIA OPERATIVA", title: ["Criterio ejecutivo.", "Construido en el mercado."],
       lead: "Accesslerate combina la objetividad de un asesor externo con el criterio práctico de quien ha operado dentro de healthcare.",
@@ -144,6 +146,8 @@ export default function MarketingHome({ locale }: { locale: Locale }) {
       const href = serviceHrefs[index];
       return <a className="service-card service-card-link" href={href} key={service.title[0]} aria-label={`${service.title[0]} ${service.title[1]}`}>{content}</a>;
     })}</div></section>
+
+    <section className="featured-solution dark-section"><a className="shell featured-solution-grid" href={c.featured.href}><p className="section-index">{c.featured.label}</p><div><h2><Title lines={c.featured.title} /></h2><p>{c.featured.body}</p><span>{c.featured.action} <i className="icon-arrow icon-ne" aria-hidden="true" /></span></div></a></section>
 
     <section className="experience paper-section" id="experiencia"><div className="shell experience-grid"><div><p className="section-index">{c.experience.index}</p><h2><Title lines={c.experience.title} /></h2></div><div className="experience-copy"><p className="large-copy">{c.experience.lead}</p><p>{c.experience.body}</p></div></div><div className="shell proof-wrap"><p className="proof-note">{c.experience.note}</p><div className="proof-grid">{c.experience.outcomes.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div></section>
 
