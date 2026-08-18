@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePairs = [
+    ["/solutions/healthcare-market-entry-mexico", "/es/soluciones/entrada-mercado-healthcare-mexico"],
     ["/services/business-growth-strategy", "/es/servicios/estrategia-negocio-crecimiento"],
     ["/services/market-access", "/es/servicios/market-access"],
     ["/services/new-business-partnerships", "/es/servicios/nuevos-negocios-alianzas"],
